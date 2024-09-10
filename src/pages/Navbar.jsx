@@ -3,7 +3,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import bar from "../assets/images/bars-sort.svg";
-import krad from '../assets/images/Krad.png'
+import krad from '../assets/images/pics/krad.png'
 
 
 const Navbar = () => {

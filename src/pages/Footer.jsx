@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 
 import { NavLink, useNavigate } from "react-router-dom";
-import krad from '../assets/images/krad.png'
+import krad from '../assets/images/pics/krad.png'
 
 import facebook from '../assets/images/facebook.png'
 import instagram from '../assets/images/instagram.png'
