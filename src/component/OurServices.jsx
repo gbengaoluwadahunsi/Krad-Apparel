@@ -18,7 +18,7 @@ const fadeIn = {
 const OurServices = () => {
   return (
     <div>
-        {/* Services */}
+        
         <section className="py-8  lg:pb-20 px-4  w-screen bg-slate-100 text-white">
           <div className="container mx-auto">
             <motion.h2 
