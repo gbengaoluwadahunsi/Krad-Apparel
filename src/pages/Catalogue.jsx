@@ -4,7 +4,7 @@ import { X, ZoomIn, ChevronRight, ChevronLeft } from 'lucide-react'
 
 // Import all images for each category
 import s1 from '../assets/images/Krad/Smarts/s1.webp'
-import s2 from '../assets/images/krad/Smarts/s2.webp'
+import s2 from '../assets/images/Krad/Smarts/s2.webp'
 import s3 from '../assets/images/Krad/Smarts/s3.webp'
 import s4 from '../assets/images/Krad/Smarts/s4.webp'
 import s5 from '../assets/images/Krad/Smarts/s5.webp'
