@@ -16,7 +16,7 @@ const listItemVariants = {
 
 export default function AboutUs() {
   return (
-    <div className="min-h-screen px-8 lg:px-32 py-16  bg-slate-100 drop-shadow-sm text-lg ">
+    <div className="min-h-screen px-8 lg:px-32 py-16   drop-shadow-sm text-lg ">
       <main className="container mx-auto py-8">
         <motion.h1
           className="text-4xl lg:text-5xl font-bold text-center mb-8 text-blue-900"
