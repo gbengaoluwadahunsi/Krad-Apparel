@@ -26,7 +26,7 @@ const  AppContent = () =>  {
       <Route  path = "/login" element= {<Login/>}/>
     </Routes>
    </div>
-  <Whatsapp/>
+  <Whatsapp />
  
     
     <Footer/>
