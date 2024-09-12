@@ -1,0 +1,25 @@
+{
+    "name": "Krad Apparel",
+    "short_name": "Krad",
+    "description": "Custom Fashion Design at Your Fingertips",
+    "icons": [
+        {
+            "src": "/krad.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/krad.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "royalBlue",
+    "background_color": "ash",
+    "display": "standalone",
+    "start_url": "/",
+    "scope": "/",
+    "lang": "en-US",
+    "orientation": "any",
+    "categories": ["fashion", "shopping", "lifestyle"]
+}
