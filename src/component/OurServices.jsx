@@ -22,7 +22,7 @@ const OurServices = () => {
         <section className="py-8  lg:pb-20 px-4  w-screen bg-slate-100 text-white">
           <div className="container mx-auto">
             <motion.h2 
-              className=" text-center  mb-12 text-5xl font-extrabold text-blue-900"
+              className=" text-center  mb-12 text-3xl md:text-5xl font-extrabold text-blue-900"
               {...fadeIn}
             >
               Our Services

@@ -20,7 +20,7 @@ const HeroThreeJS = () => {
       
       </div>
       {/* Right side: Contact form */}
-      <div className=" w-full md:w-1/2 flex items-center justify-center border-4 border-dashed border-blue-600 py-16 p-8  py-16 bg-gray-100">
+      <div className=" w-full md:w-1/2 flex items-center justify-center border-4 border-dashed border-blue-600  p-8  py-16  bg-gray-100">
         <form className="w-full max-w-md  ">
           <h2 className="  mb-4 text-4xl lg:text-5xl font-extrabold text-blue-900">Get In Touch</h2>
           <p className="text-lg font-mono mb-4  text-blue-500">Please, we would love to hear from you so we can serve you better.</p>

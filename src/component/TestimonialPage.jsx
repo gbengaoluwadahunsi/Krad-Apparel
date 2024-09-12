@@ -54,7 +54,7 @@ const TestimonialPage = () => {
   return (
     <section className="py-16 bg-slate-100 px-4 lg:px-8">
       <div className="container mx-auto">
-        <h2 className="text-center mb-12 text-5xl font-extrabold text-blue-900">
+        <h2 className="text-center mb-12 text-3xl md:text-5xl font-extrabold text-blue-900">
           What Our Clients Say
         </h2>
 

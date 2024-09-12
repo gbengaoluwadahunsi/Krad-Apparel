@@ -14,7 +14,7 @@ const TailorDesignSection = () => {
   >
       <div className="container mx-auto text-center">
         <motion.h2
-          className="text-5xl font-extrabold text-blue-700 mb-8"
+          className="text-3xl md:text-5xl font-extrabold text-blue-700 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -37,7 +37,7 @@ const TailorDesignSection = () => {
         >
           <Link
             to="/tailor-design"
-            className="bg-yellow-400 text-blue-900 px-10 py-4 rounded-full font-bold shadow-xl hover:bg-yellow-300 transition-all duration-300"
+            className="bg-yellow-400 text-blue-900 px-4 lg:px-10 py-4 rounded-full font-bold shadow-xl hover:bg-yellow-300 transition-all duration-300"
           >
             Start Your Custom Design
           </Link>
