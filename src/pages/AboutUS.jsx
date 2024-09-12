@@ -36,7 +36,7 @@ export default function AboutUs() {
               Our Story
             </h2>
             <p className="mb-4">
-              Founded in 2024, Krad Apparel was born out of a passion for
+              Founded in 2017, Krad Apparel was born out of a passion for
               combining timeless elegance with modern fashion. Our journey began
               when our founder, a seasoned tailor, recognized the need for
               high-quality, custom-fitted clothing in a world of fast fashion.
@@ -184,14 +184,14 @@ export default function AboutUs() {
             <div className="w-full md:w-2/3 md:pl-8">
               <h3 className="text-3xl font-bold  mb-2 text-blue-900">Kemi Adekolu</h3>
               <p className="mb-4">
-               She is the visionary behind Krad Apparel, who brings over two
-                decades of experience in haute couture and bespoke tailoring to
-                our brand. Her journey in fashion began in the ateliers of
-                Paris, where she honed her skills under the tutelage of
+               She is the visionary behind Krad Apparel, who brings over a 
+                decade of experience in haute couture and bespoke tailoring to
+                our brand. Her journey in fashion began in the ateliers,
+                where she honed her skills under the tutelage of
                 world-renowned designers.
               </p>
               <p>
-                Jane&apos;s philosophy is simple yet profound: Clothing should
+                Kemi&apos;s philosophy is simple yet profound: Clothing should
                 be a perfect harmony between the wearer&apos;s personality and
                 impeccable craftsmanship&quot;. This belief is the driving force
                 behind Krad Apparel&apos;s commitment to personalized,

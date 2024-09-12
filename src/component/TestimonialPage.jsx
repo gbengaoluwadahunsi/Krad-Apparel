@@ -13,8 +13,8 @@ import test4 from '../assets/images/Krad/testy4.webp'
 
 const testimonials = [
   { name: 'Damilola O.', text: 'Krad Apparel transformed my wardrobe. Their attention to detail is unmatched!', image: test3 },
-  { name: 'Gift T.', text: 'I love how my custom suit fits. It\'s perfect for both work and special occasions.', image: test4 },
-  { name: 'Anabelle J.', text: 'Krad Apparel transformed my wardrobe. Their attention to detail is unmatched!', image: test2 },
+  { name: 'Gift T.', text: 'From consultation to delivery, everything was seamless, exceeding my expectations.', image: test4 },
+  { name: 'Anabelle J.', text: 'The attention to detail in my tailored outfit was amazing! , matched exactly what I wanted.', image: test2 },
   { name: 'Atinuke A.', text: 'I love how my custom suit fits. It\'s perfect for both work and special occasions.', image: test1},
 ]
 
