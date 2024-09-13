@@ -7,14 +7,14 @@ const TailorDesignSection = () => {
     <section
     className="py-16 px-8 h-[90vh] bg-cover lg:bg-contain"
     style={{
-      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 20, 0),  rgba(0, 0, 20, 0.4)), url(${sketch})`,
+      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 20, 0.8),  rgba(0, 0, 20, 0.4)), url(${sketch})`,
       
       backgroundPosition: 'center',
     }}
   >
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center ">
         <motion.h2
-          className="text-3xl md:text-5xl font-extrabold text-blue-700 mb-8"
+          className="text-3xl md:text-5xl font-extrabold text-blue-600 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

@@ -8,7 +8,8 @@ import { motion } from 'framer-motion'
 
 
 
-const HeroSection = () => {
+// eslint-disable-next-line react/prop-types
+const HeroSection = ({Link}) => {
   useEffect(() => {
     gsap.fromTo(
       '.hero-text',
@@ -32,7 +33,8 @@ const HeroSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Get Started Now
+               <Link  to="feature-design" smooth={true} duration={500}> Get Started Now
+               </Link>
               </motion.button>
        
       </div>

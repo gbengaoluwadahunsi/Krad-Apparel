@@ -15,7 +15,7 @@ const fadeIn = {
 
 const FeaturedDesigns = () => {
   return (
-    <section className="px-4 py-16">
+    <section name="feature-design"  className="px-4 py-16">
       <div className="container mx-auto">
         <motion.h2
           className="text-center mb-12 text-3xl md:text-5xl font-extrabold text-blue-900"

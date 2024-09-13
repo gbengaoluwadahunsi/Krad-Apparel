@@ -6,6 +6,8 @@ import HeroSection from "../component/HeroSection"
 import OurServices from "../component/OurServices"
 import TailorDesignSection from "../component/TailorDesignSection"
 import TestimonialPage from "../component/TestimonialPage"
+import { Link, Element } from 'react-scroll';
+
 
 // eslint-disable-next-line react/prop-types
 const AnimatedSection = ({ children, direction = 'left' }) => {
@@ -44,7 +46,7 @@ const AnimatedSection = ({ children, direction = 'left' }) => {
       x: 0,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.3,
         ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
@@ -66,10 +68,13 @@ const Home = () => {
   return (
     <div className="w-screen overflow-x-hidden">
 
-      <HeroSection />
+      <HeroSection Link = {Link} />
 
       <AnimatedSection direction="right">
-        <FeaturedDesigns />
+      <Element name="section1" className="element">
+       <FeaturedDesigns />  
+      </Element>
+       
       </AnimatedSection>
 
       <AnimatedSection direction="left">
