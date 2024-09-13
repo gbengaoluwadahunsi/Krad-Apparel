@@ -44,7 +44,7 @@ const TailorDesign = () => {
   };
   
   const generateDesign = async (formData) => {
-    const apiKey = 'YOUR_HUGGING_FACE_API_KEY'; // Replace with your API key
+    const apiKey = 'YOUR_HUGGING_FACE_API_KEY'; 
     const apiUrl = 'https://api-inference.huggingface.co/models/CompVis/stable-diffusion-v1-4';
   
     const headers = {
