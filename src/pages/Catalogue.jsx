@@ -162,7 +162,7 @@ const Catalogue = () => {
                 src={item.src}
                 alt={item.alt}
                 className="w-full h-60 lg:h-96 rounded-lg shadow-md object-cover"
-                loading="lazy"
+               
               />
               <motion.div
                 className="absolute inset-0 bg-blue-900 bg-opacity-50 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
