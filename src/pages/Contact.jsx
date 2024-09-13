@@ -1,49 +1,49 @@
-import  { useState } from 'react'
-import emailjs from '@emailjs/browser'
-import machine from "../assets/images/machine.mp4"
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import machine from "../assets/images/machine.mp4";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData(prevData => ({
       ...prevData,
       [name]: value
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus(null)
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message
         },
-        'YOUR_PUBLIC_KEY'
-      )
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', message: '' })
+        import.meta.env.VITE_PUBLIC_KEY
+      );
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('Error sending email:', error)
-      setSubmitStatus('error')
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <div className="pt-20 h-[100vh] lg:h-[96vh] gap-1 flex p-4 w-screen mx-auto lg:px-32">
@@ -125,5 +125,5 @@ export default function Contact() {
         </form>
       </div>
     </div>
-  )
+  );
 }

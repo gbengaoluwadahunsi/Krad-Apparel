@@ -52,7 +52,7 @@ const Footer = () => {
     <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
     <p>3, Ondo Avenue, Ijapo estate 340110, Akure </p>
     <p>Ondo State, Nigeria</p>
-    <p>Email: info@kradapparel.com</p>
+    <p>Email: kradapparelfashion@gmail.com</p>
     <p>Phone: (+234) 806-939-1306</p>
   </div>
 
