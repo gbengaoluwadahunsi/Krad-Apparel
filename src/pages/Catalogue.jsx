@@ -180,7 +180,7 @@ const Catalogue = () => {
         {visibleItems < currentCategory.items.length && (
           <div className="mt-8 text-center">
             <button
-              className="px-6 py-2 mb-2 rounded-full bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold transition-colors duration-300"
+              className="px-6 py-2 mb-2 rounded bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold transition-colors duration-300"
               onClick={loadMore}
             >
               Load More

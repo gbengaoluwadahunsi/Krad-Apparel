@@ -37,7 +37,7 @@ const TailorDesignSection = () => {
         >
           <Link
             to="/tailor-design"
-            className="bg-yellow-400 text-blue-900 px-4 lg:px-10 py-4 rounded-full font-bold shadow-xl hover:bg-yellow-300 transition-all duration-300"
+            className="bg-yellow-400 text-blue-900 px-4 lg:px-10 py-4 rounded font-bold shadow-xl hover:bg-yellow-300 transition-all duration-300"
           >
             Start Your Custom Design
           </Link>

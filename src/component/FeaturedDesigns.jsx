@@ -31,7 +31,7 @@ const FeaturedDesigns = () => {
             >
               <Link
                 to="/catalogue"
-                className="bg-yellow-400 absolute bottom-4 left-4 text-blue-900 px-6 py-3 md:px-10 md:py-4 rounded-full font-bold shadow-xl hover:bg-yellow-300 transition-all duration-300 text-sm md:text-base"
+                className="bg-yellow-400 absolute bottom-4 left-4 text-blue-900 px-6 py-3 md:px-10 md:py-4 rounded font-bold shadow-xl hover:bg-yellow-300 transition-all duration-300 text-sm md:text-base"
               >
                 Check Our Catalogue
               </Link>

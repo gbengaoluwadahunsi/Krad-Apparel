@@ -27,7 +27,7 @@ const CallToAction = () => {
        </motion.p>
        
        <Link to='/contact'
-         className="bg-yellow-400 text-blue-900 px-4 md:px-8 py-3  rounded-full text-lg font-bold hover:bg-yellow-300 transition duration-300"
+         className="bg-yellow-400 text-blue-900 px-4 md:px-8 py-3  rounded text-lg font-bold hover:bg-yellow-300 transition duration-300"
          whileHover={{ scale: 1.05 }}
          whileTap={{ scale: 0.95 }}
        >

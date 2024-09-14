@@ -49,8 +49,8 @@ const TailorDesign = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 px-4 py-16">
-      <h1 className="text-4xl lg:text-blue-900  font-bold text-center mb-8">Create Your Custom Outfit and Fashion</h1>
+    <div className="container mx-auto py-28 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl lg:text-5xl text-blue-900  font-bold text-center mb-10">Create Your Custom Outfit and Fashion</h1>
 
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-1/2">
@@ -123,7 +123,7 @@ const TailorDesign = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="w-fit text-blue-900 bg-yellow-400 hover:bg-yellow-300 hover:scale-110  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               disabled={loading}
             >
               {loading ? 'Generating...' : 'Generate Design'}

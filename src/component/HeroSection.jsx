@@ -29,7 +29,7 @@ const HeroSection = ({Link}) => {
         <p className="hero-text fasthand-regular  text-xl md:text-2xl py-4 lg:text-4xl text-shadow-lg   text-white">Custom Female Fashion Design at Your Fingertips</p>
        
         <motion.button 
-                className="bg-yellow-400 text-blue-900 px-4 lg:px-8 py-3 rounded-full  text-md md:text-lg font-bold hover:bg-yellow-300 transition duration-300"
+                className="bg-yellow-400 text-blue-900 px-4 lg:px-8 py-3 rounded  text-md md:text-lg font-bold hover:bg-yellow-300 transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
