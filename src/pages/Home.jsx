@@ -21,7 +21,7 @@ const AnimatedSection = ({ children, direction = 'left' }) => {
           controls.start('visible')
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     )
 
     if (ref.current) {

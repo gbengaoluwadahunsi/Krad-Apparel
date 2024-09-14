@@ -26,7 +26,7 @@ const FeaturedDesigns = () => {
         <div className="flex flex-col md:flex-row gap-4 md:gap-1">
           <div className="md:w-2/3 order-2 md:order-1">
             <div
-              className="relative w-full h-64 md:h-full bg-cover bg-center rounded-lg shadow-lg hover:border-4 cursor-pointer border-blue-900"
+              className="relative w-full h-80 md:h-full bg-cover bg-center rounded-lg shadow-lg hover:border-4 cursor-pointer border-blue-900"
               style={{ backgroundImage: `url(${feature})` }}
             >
               <Link

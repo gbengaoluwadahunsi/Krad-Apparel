@@ -1,178 +1,149 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import axios from 'axios';
+import  { useState } from 'react';
 
 const TailorDesign = () => {
-  const [file, setFile] = useState(null);
-  const [sketch, setSketch] = useState(null);
-  const [loading, setLoading] = useState(false); // Loading state for API request
-  const [formData, setFormData] = useState({
-    name: '',
-    measurements: '',
-    design: '',
-  });
-
-  const handleFileUpload = (e) => {
-    setFile(e.target.files[0]);
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
+  const [colors, setColors] = useState('');
+  const [style, setStyle] = useState('');
+  const [description, setDescription] = useState('');
+  const [country, setCountry] = useState('');
+  const [generatedImage, setGeneratedImage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-  
-    const formDataToSend = new FormData();
-    formDataToSend.append('file', file);
-    formDataToSend.append('name', formData.name);
-    formDataToSend.append('measurements', formData.measurements);
-    formDataToSend.append('design', formData.design);
-  
+    setError(null);
+
+    const prompt = `Design a female outfit in ${style} style from ${country}. Details: height: ${height} cm, weight: ${weight} kg, colors: ${colors}, description: ${description}.`;
+
     try {
-      const sketchUrl = await generateDesign(formDataToSend); // Sending the form data
-      setSketch(sketchUrl);
-    } catch (error) {
-      console.error('Error generating design:', error);
-    } finally {
-      setLoading(false);
+      const imageBlob = await queryDesign({ inputs: prompt });
+      const imageUrl = URL.createObjectURL(imageBlob);
+      setGeneratedImage(imageUrl);
+    } catch (err) {
+      setError('Failed to generate the design. Please try again.');
+      console.error('Error:', err);
     }
+
+    setLoading(false);
   };
-  
-  const generateDesign = async (formData) => {
-    const apiKey = 'YOUR_HUGGING_FACE_API_KEY'; 
-    const apiUrl = 'https://api-inference.huggingface.co/models/CompVis/stable-diffusion-v1-4';
-  
-    const headers = {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'multipart/form-data',
-    };
-  
-    try {
-      const response = await axios.post(apiUrl, formData, { headers });
-      return response.data?.generated_images?.[0] || 'https://via.placeholder.com/400x600?text=Image+Not+Generated';
-    } catch (error) {
-      console.error('API call failed:', error);
-      throw error;
+
+  const queryDesign = async (data) => {
+    const response = await fetch('https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev', {
+      headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_HUGGING_FACE}`,
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch the design.');
     }
+
+    const result = await response.blob();
+    return result;
   };
-  
+
   return (
-    <section className="py-28 bg-gray-50 px-8">
-      <div className="container mx-auto flex flex-wrap">
-        {/* Form Section on the left */}
-        <div className="w-full md:w-1/2 px-4">
-          <motion.h2
-            className="text-4xl font-bold text-center md:text-left mb-12 text-blue-900"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            Create Your Custom Outfit Design
-          </motion.h2>
+    <div className="container mx-auto p-4 px-4 py-16">
+      <h1 className="text-4xl lg:text-blue-900  font-bold text-center mb-8">Create Your Custom Outfit and Fashion</h1>
 
-          <form onSubmit={handleSubmit} className="bg-gray-200 p-8 rounded-lg shadow-lg">
-            <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Full Name
-              </label>
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="w-full md:w-1/2">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="height" className="block text-sm font-medium text-gray-700">Height (in cm):</label>
               <input
+                id="height"
                 type="text"
-                name="name"
-                placeholder="Enter your name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-lg text-gray-700"
-                required
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </div>
 
-            <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Your Measurements (Height, Weight, etc.)
-              </label>
+            <div>
+              <label htmlFor="weight" className="block text-sm font-medium text-gray-700">Weight (in kg):</label>
               <input
+                id="weight"
                 type="text"
-                name="measurements"
-                placeholder="Enter your measurements"
-                value={formData.measurements}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-lg text-gray-700"
-                required
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </div>
 
-            <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Design Preferences
-              </label>
+            <div>
+              <label htmlFor="colors" className="block text-sm font-medium text-gray-700">Favorite Colors:</label>
+              <input
+                id="colors"
+                type="text"
+                value={colors}
+                onChange={(e) => setColors(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="style" className="block text-sm font-medium text-gray-700">Style (e.g., casual, formal):</label>
+              <input
+                id="style"
+                type="text"
+                value={style}
+                onChange={(e) => setStyle(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="country" className="block text-sm font-medium text-gray-700">Country:</label>
+              <input
+                id="country"
+                type="text"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="description" className="block text-sm font-medium text-gray-700">Description of the Dress/Shirt:</label>
               <textarea
-                name="design"
-                placeholder="Describe the outfit you'd like to design"
-                value={formData.design}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border rounded-lg text-gray-700"
-                required
+                id="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                rows={4}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               />
             </div>
 
-            <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2">
-                Upload a Full-Body Picture
-              </label>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleFileUpload}
-                className="w-full px-3 py-2 border rounded-lg text-gray-700"
-                required
-              />
-            </div>
-
-            <div className="text-center">
-              <motion.button
-                type="submit"
-                className="bg-blue-500 text-white px-6 py-2 rounded-full font-bold"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                disabled={loading}
-              >
-                {loading ? 'Generating...' : 'Generate Design'}
-              </motion.button>
-            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              disabled={loading}
+            >
+              {loading ? 'Generating...' : 'Generate Design'}
+            </button>
           </form>
+
+          {error && <p className="mt-4 text-red-500">{error}</p>}
         </div>
 
-        {/* Sketch/Generated Design Section on the right */}
-        <div className="w-full md:w-1/2 px-4 mt-12 md:mt-0">
-          {sketch ? (
-            <div className="bg-white p-8 rounded-lg shadow-lg text-center">
-              <p className="text-gray-700 text-lg font-semibold mb-4">Generated Sketch:</p>
-              <img
-                src={sketch}
-                alt="Generated Design"
-                className="w-full h-auto object-cover rounded-lg"
-              />
-              <motion.button
-                className="mt-6 bg-yellow-500 text-white px-6 py-2 rounded-lg font-bold"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Download Design
-              </motion.button>
-            </div>
+        <div className="w-full md:w-1/2">
+          {generatedImage ? (
+            <img src={generatedImage} alt="Custom design" className="w-full h-auto rounded-lg shadow-lg" />
           ) : (
-            <div className="bg-blue-500 my-20 h-40 p-8 rounded-lg shadow-lg  text-center">
-              <p className="text-gray-700 text-lg font-semibold mb-4">Your sketch will appear here.</p>
+            <div className="bg-gray-200 w-full h-96 rounded-lg flex items-center justify-center shadow-lg">
+              <p className="text-gray-600 text-lg font-medium">Ready-Made Dress Image</p>
             </div>
           )}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
