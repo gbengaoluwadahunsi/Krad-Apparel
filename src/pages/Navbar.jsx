@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
-import bar from "../assets/images/bars-sort.svg";
+import { useState, useRef, useEffect } from "react"
 import krad from '../assets/images/pics/krad.png'
+import bar from '../assets/images/pics/bars-sort.svg'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
